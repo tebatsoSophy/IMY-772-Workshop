@@ -1,0 +1,26 @@
+name: Run Jest Tests
+
+on:
+  push:
+    branches: [ main, "*" ]   # runs on every branch push
+  pull_request:
+    branches: [ main ]        # runs when you open a PR to main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest    # GitHub spins up a fresh Linux machine
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3          # downloads your repo onto the machine
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install                   # installs React, Jest, etc.
+
+      - name: Run tests
+        run: npm test -- --watchAll=false  # runs Jest once (not in watch mode)
