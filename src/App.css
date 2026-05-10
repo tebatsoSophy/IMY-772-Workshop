@@ -1,0 +1,50 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #061a44 0%, #071a3a 40%, #051639 100%);
+}
+
+html,
+body,
+#root {
+  background: #051639;
+}
+
+body {
+  color: #f4f7ff;
+}
+
+.App-header {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 40px 20px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.App-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2rem;
+  }
+
+  .App-main {
+    padding: 20px;
+    align-items: flex-start;
+  }
+}
