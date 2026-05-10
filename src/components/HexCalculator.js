@@ -234,14 +234,14 @@ function HexCalculator() {
                 ''
               )}
             </div>
-            <div className={`result-display ${errorMessage ? 'error' : ''}`}>
+            <div className={`result-display ${errorMessage ? 'error' : ''}`} data-testid="display">
               {display}
             </div>
           </div>
 
           {/* Error message display */}
           {errorMessage && (
-            <div className="error-message">
+            <div className="error-message" data-testid="error-message">
               {errorMessage}
             </div>
           )}
@@ -254,6 +254,7 @@ function HexCalculator() {
                 onClick={handleClear}
                 className="btn btn-special btn-clear"
                 title="All Clear (C)"
+                data-testid="btn-AC"
               >
                 AC
               </button>
@@ -261,6 +262,7 @@ function HexCalculator() {
                 onClick={() => handleOperationClick('divide')}
                 className={`btn btn-operation ${operation === 'divide' ? 'active' : ''}`}
                 title="Divide (/)"
+                data-testid="btn-divide"
               >
                 /
               </button>
@@ -268,6 +270,7 @@ function HexCalculator() {
                 onClick={() => handleOperationClick('multiply')}
                 className={`btn btn-operation ${operation === 'multiply' ? 'active' : ''}`}
                 title="Multiply (×)"
+                data-testid="btn-multiply"
               >
                 ×
               </button>
@@ -275,6 +278,7 @@ function HexCalculator() {
                 onClick={handleBackspace}
                 className="btn btn-special btn-backspace"
                 title="Backspace"
+                data-testid="btn-backspace"
               >
                 ←
               </button>
@@ -285,18 +289,21 @@ function HexCalculator() {
               <button
                 onClick={() => handleNumberClick('7')}
                 className="btn btn-number"
+                data-testid="btn-7"
               >
                 7
               </button>
               <button
                 onClick={() => handleNumberClick('8')}
                 className="btn btn-number"
+                 data-testid="btn-8"
               >
                 8
               </button>
               <button
                 onClick={() => handleNumberClick('9')}
                 className="btn btn-number"
+                 data-testid="btn-9"
               >
                 9
               </button>
@@ -304,6 +311,7 @@ function HexCalculator() {
                 onClick={() => handleOperationClick('subtract')}
                 className={`btn btn-operation ${operation === 'subtract' ? 'active' : ''}`}
                 title="Subtract (−)"
+                 data-testid="btn-subtract"
               >
                 −
               </button>
@@ -314,18 +322,21 @@ function HexCalculator() {
               <button
                 onClick={() => handleNumberClick('4')}
                 className="btn btn-number"
+                 data-testid="btn-4"
               >
                 4
               </button>
               <button
                 onClick={() => handleNumberClick('5')}
                 className="btn btn-number"
+                 data-testid="btn-5"
               >
                 5
               </button>
               <button
                 onClick={() => handleNumberClick('6')}
                 className="btn btn-number"
+                 data-testid="btn-6"
               >
                 6
               </button>
@@ -333,6 +344,7 @@ function HexCalculator() {
                 onClick={() => handleOperationClick('add')}
                 className={`btn btn-operation ${operation === 'add' ? 'active' : ''}`}
                 title="Add (+)"
+                 data-testid="btn-add"
               >
                 +
               </button>
@@ -343,18 +355,21 @@ function HexCalculator() {
               <button
                 onClick={() => handleNumberClick('1')}
                 className="btn btn-number"
+                 data-testid="btn-1"
               >
                 1
               </button>
               <button
                 onClick={() => handleNumberClick('2')}
                 className="btn btn-number"
+                 data-testid="btn-2"
               >
                 2
               </button>
               <button
                 onClick={() => handleNumberClick('3')}
                 className="btn btn-number"
+                 data-testid="btn-3"
               >
                 3
               </button>
@@ -362,6 +377,7 @@ function HexCalculator() {
                 onClick={handleEqual}
                 className="btn btn-equal"
                 title="Calculate"
+                 data-testid="btn-equal"
               >
                 =
               </button>
@@ -373,18 +389,21 @@ function HexCalculator() {
                 onClick={() => handleNumberClick('0')}
                 className="btn btn-number"
                 style={{ gridColumn: '1 / 3' }}
+                 data-testid="btn-0"
               >
                 0
               </button>
               <button
                 onClick={() => handleNumberClick('A')}
                 className="btn btn-number"
+                 data-testid="btn-A"
               >
                 A
               </button>
               <button
                 onClick={() => handleNumberClick('B')}
                 className="btn btn-number"
+                 data-testid="btn-B"
               >
                 B
               </button>
@@ -395,24 +414,28 @@ function HexCalculator() {
               <button
                 onClick={() => handleNumberClick('C')}
                 className="btn btn-number"
+                 data-testid="btn-C"
               >
                 C
               </button>
               <button
                 onClick={() => handleNumberClick('D')}
                 className="btn btn-number"
+                 data-testid="btn-D"
               >
                 D
               </button>
               <button
                 onClick={() => handleNumberClick('E')}
                 className="btn btn-number"
+                 data-testid="btn-E"
               >
                 E
               </button>
               <button
                 onClick={() => handleNumberClick('F')}
                 className="btn btn-number"
+                 data-testid="btn-F"
               >
                 F
               </button>
@@ -422,7 +445,7 @@ function HexCalculator() {
 
         {/* History */}
         {history.length > 0 && (
-          <div className="history">
+          <div className="history"  data-testid="history">
             <h3>History</h3>
             <ul className="history-list">
               {history.map((entry, index) => (
